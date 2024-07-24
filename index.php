@@ -40,6 +40,9 @@
 
     ];
 
+    $firstList = $hotels[0];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -63,11 +66,13 @@
   </thead>
   <tbody>
     <tr>
+
       <th scope="row">1</th>
-      <?php foreach($hotels as $Info): ?>
+      <?php foreach($firstList as $Info): ?>
       <td><?php echo $Info['name']  ?></td>
-      <td>Otto</td>
+      <td><?php echo $Info[ 'description']  ?></td>
       <td>@mdo</td>
+      <?php endforeach; ?>
     </tr>
     <tr>
       <th scope="row">2</th>
