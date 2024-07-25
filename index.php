@@ -40,8 +40,6 @@
 
     ];
 
-    $firstList = $hotels[0];
-
 
 ?>
 
@@ -55,37 +53,24 @@
 </head>
 <body>
 <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Parcheggio</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Descrizione</th>
-      <th scope="col">Voto</th>
-      <th scope="col">Diastanza</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-
-      <th scope="row">1</th>
-      <?php foreach($firstList as $Info): ?>
-      <td><?php echo $Info['name']  ?></td>
-      <td><?php echo $Info[ 'description']  ?></td>
-      <td>@mdo</td>
-      <?php endforeach; ?>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
+<tr>
+      <th class='col'>name</th>
+      <th class='col'>description</th>
+      <th class='col'>parking</th>
+       <th class='col'>vote</th>
+      <th class='col'>distance of center</th>
+ </tr>
+ </thead>
+    <?php foreach($hotels as $Info) { 
+      $park=$hotel['parking']? 'si':'no';   ?>
+ <tr>
+      <td><?php echo $Info['name']; ?></td>              
+      <td><?php echo $Info['description']; ?></td>
+      <td><?php echo $park; ?></td>
+      <td><?php echo $Info['vote']; ?></td>
+      <td><?php echo $Info['distance_to_center']; ?></td>
+  </tr>
+      <?php }?>
 </table>
     
 </body>
